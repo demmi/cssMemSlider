@@ -93,10 +93,10 @@ article img {
 }
 
 #active label {
-  border-radius: 5px;
+  border-radius: 50%;
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 1rem;
+  height: 1rem;
   background: #bbb;
 }
 
