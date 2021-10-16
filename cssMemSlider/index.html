@@ -1,12 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>cssMemSlider</title>
 </head>
+
 <body>
-    
+    <article id=slider>
+
+        <input checked type=radio name=slider id=slide1 />
+        <input type=radio name=slider id=slide2 />
+        <input type=radio name=slider id=slide3 />
+        <input type=radio name=slider id=slide4 />
+        <input type=radio name=slider id=slide5 />
+
+
+        <div id=slides>
+
+            <div id=overflow>
+
+                <div class=inner>
+
+                    <article>
+                        <div class=info>
+                            <h3>Cloud Dragon</h3>
+                        </div>
+                        <img src="./assets/img/chevrolet_trailblazer_activ_1.avif" />
+                    </article>
+
+
+                    <article>
+                        <div class=info>
+                            <h3>Mountain Fort</h3>
+                        </div>
+                        <img src="./assets/img/chevrolet_trailblazer_activ_19.avif" />
+                    </article>
+
+                    <article>
+                        <div class=info>
+                            <h3>Mountain Outpost</h3>
+                        </div>
+
+                        <img src="./assets/img/chevrolet_trailblazer_activ_4.avif" />
+                    </article>
+
+                    <article>
+                        <div class=info>
+                            <h3>Cliffs</h3>
+                        </div>
+                        <img src="./assets/img/chevrolet_trailblazer_activ_57.avif" />
+                    </article>
+
+                    <article>
+
+                        <div class=info>
+                            <h3>Hill Fort</h3>
+                        </div>
+                        <img src="./assets/img/chevrolet_trailblazer_activ_7.avif" />
+                    </article>
+
+                </div> <!-- .inner -->
+
+            </div> <!-- #overflow -->
+
+        </div> <!-- #slides -->
+
+        <div id=active>
+
+            <label for=slide1></label>
+            <label for=slide2></label>
+            <label for=slide3></label>
+            <label for=slide4></label>
+            <label for=slide5></label>
+
+        </div> <!-- #active -->
+    </article>
 </body>
+
 </html>
