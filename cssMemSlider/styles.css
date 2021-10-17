@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+}
+
+img {
+  border: none;
+}
+
+article {
+  display: block;
+}
+
+body {
+  color: #333;
+  background: #ddd;
+  margin: 1% auto;
+  overflow-x: hidden;
+}
+
+#slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 2rem;
+  grid-template-areas:
+    "slides slides slides"
+    "controls controls active";
+  text-align: center;
+  margin: 0 auto;
+  max-width: 45rem;
+  color: #777;
+  opacity: 1;
+  transition: all 0.5s ease-out;
+}
+
+label {
+  cursor: pointer;
+}
+
+input {
+  display: none;
+}
+
+#slide1:checked~#slides .inner {
+  margin-left: 0;
+}
+
+#slide2:checked~#slides .inner {
+  margin-left: -100%;
+}
+
+#slide3:checked~#slides .inner {
+  margin-left: -200%;
+}
+
+#slide4:checked~#slides .inner {
+  margin-left: -300%;
+}
+
+#slide5:checked~#slides .inner {
+  margin-left: -400%;
+}
+
+
+#overflow {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1%;
+}
+
+article img {
+  width: 100%;
+}
+
+#slides .inner {
+  width: 500%;
+  line-height: 0;
+}
+
+#slides article {
+  width: 20%;
+  float: left;
+}
+
+
+#active {
+  grid-area: active;
+  text-align: right;
+  margin-right: 6%;
+}
+
+#active label {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#active label span {
+  display: inline-block;
+  background: #8eacbb;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+#active label:hover span {
+  background: #607d8b;
+  border-color: #607d8b !important;
+}
+
+#active label:active span {
+  background: black;
+  border-color: #333 !important;
+}
+
+#slide1:checked~#active label:nth-child(1) span,
+#slide2:checked~#active label:nth-child(2) span,
+#slide3:checked~#active label:nth-child(3) span,
+#slide4:checked~#active label:nth-child(4) span,
+#slide5:checked~#active label:nth-child(5) span {
+  background: transparent;
+  border: 0.2rem solid black !important;
+}
+
+#slide1:checked~#active label:nth-child(1):hover span,
+#slide2:checked~#active label:nth-child(2):hover span,
+#slide3:checked~#active label:nth-child(3):hover span,
+#slide4:checked~#active label:nth-child(4):hover span,
+#slide5:checked~#active label:nth-child(5):hover span {
+  background: transparent;
+  border: 0.2rem solid #34515e !important;
+}
+
+#slide1:checked~#active label:nth-child(1):active span,
+#slide2:checked~#active label:nth-child(2):active span,
+#slide3:checked~#active label:nth-child(3):active span,
+#slide4:checked~#active label:nth-child(4):active span,
+#slide5:checked~#active label:nth-child(5):active span {
+  background: #8eacbb;
+  border: 0.2rem solid #34515e !important;
+}
+
+.info {
+  font-style: italic;
+  color: #000;
+  text-align: left;
+}
+
+.info h3 {
+  color: #333;
+  margin: 0 0 0.25rem;
+  font-weight: normal;
+  font-size: 1.5rem;
+  font-style: normal;
+}
+
+#slides {
+  grid-area: slides;
+  border-radius: 1%;
+  box-shadow: 0.1rem 0.1rem 0.2rem #666;
+  padding: 1%;
+  background: #fff;
+  margin: 0 1%;
+}
+
+#slides .inner {
+  transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+#slides,
+#active,
+#active label {
+  transition: all 0.5s ease-out;
+}
+
+#slider #slides {
+  padding: 1% 1%;
+  border-radius: 1%;
+}
+
+
+#controls {
+  grid-area: controls;
+  width: 95%;
+  margin-left: 4%;
+}
+
+#controls label {
+  display: none;
+  opacity: 0;
+  cursor: auto;
+}
+
+#slide1:checked~#controls label:nth-child(1),
+#slide2:checked~#controls label:nth-child(2),
+#slide3:checked~#controls label:nth-child(3),
+#slide4:checked~#controls label:nth-child(4),
+#slide5:checked~#controls label:nth-child(5) {
+  opacity: 1;
+  animation-name: open;
+  animation-duration: 2s;
+  display: block;
+}
+
+@keyframes open {
+  0% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+
+@media only screen and (max-width: 48rem) {
+  #slider {
+    grid-template-areas:
+      "slides slides slides"
+      "active active active"
+      "controls controls controls";
+  }
+
+  #active {
+    text-align: center;
+  }
+}
